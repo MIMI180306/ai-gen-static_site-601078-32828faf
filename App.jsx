@@ -13,7 +13,7 @@ const App = () => {
     <div className={`app ${theme}`}>
       <header className="app-header">
         <div className="header-content">
-          <h1>🧮 数学问题求解器1</h1>
+          <h1>🧮 数学问题求解器123egr'f'er</h1>
           <p className="subtitle">提供详细的分步解答和解释</p>
           <button className="theme-toggle" onClick={toggleTheme}>
             {theme === 'light' ? '🌙' : '☀️'}
