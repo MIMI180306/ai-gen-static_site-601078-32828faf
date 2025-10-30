@@ -1,0 +1,508 @@
+/* 求解器页面样式 */
+.solver-page {
+  width: 100%;
+}
+
+.solver-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 输入区域 */
+.input-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .input-section {
+  background: #2a2a2a;
+}
+
+.problem-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.input-header h2 {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.app.dark .input-header h2 {
+  color: #fff;
+}
+
+.problem-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Monaco', 'Courier New', monospace;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+.app.dark .problem-textarea {
+  background: #1a1a1a;
+  border-color: #444;
+  color: #fff;
+}
+
+.problem-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input-tips {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.app.dark .input-tips {
+  background: #1a1a1a;
+}
+
+.input-tips p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.app.dark .input-tips p {
+  color: #aaa;
+}
+
+/* 示例问题 */
+.example-problems {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .example-problems {
+  background: #2a2a2a;
+}
+
+.example-problems h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.app.dark .example-problems h3 {
+  color: #fff;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.example-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app.dark .example-card {
+  background: #1a1a1a;
+  border-color: #444;
+}
+
+.example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.example-icon {
+  font-size: 1.2rem;
+}
+
+.example-category {
+  font-size: 0.8rem;
+  color: #666;
+  background: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.app.dark .example-category {
+  background: #333;
+  color: #aaa;
+}
+
+.example-text {
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.app.dark .example-text {
+  color: #fff;
+}
+
+/* 解答显示 */
+.solution-section {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.solution-display {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .solution-display {
+  background: #2a2a2a;
+}
+
+.solution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.solution-header h2 {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.app.dark .solution-header h2 {
+  color: #fff;
+}
+
+.solution-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control-btn {
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.app.dark .control-btn {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.control-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.solution-result {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.result-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.result-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.solution-steps h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.app.dark .solution-steps h3 {
+  color: #fff;
+}
+
+/* 步骤卡片 */
+.step-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.app.dark .step-card {
+  background: #1a1a1a;
+  border-color: #444;
+}
+
+.step-card.expanded {
+  border-color: #667eea;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  gap: 1rem;
+  transition: background 0.3s ease;
+}
+
+.step-header:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.step-number {
+  background: #667eea;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.step-title {
+  flex: 1;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.app.dark .step-title {
+  color: #fff;
+}
+
+.step-toggle {
+  color: #667eea;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  padding: 1rem;
+  border-top: 2px solid #e0e0e0;
+  background: white;
+}
+
+.app.dark .step-content {
+  background: #0f0f0f;
+  border-top-color: #333;
+}
+
+.step-formula {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: #667eea;
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.app.dark .step-formula {
+  background: #1a1a2e;
+  color: #7c8fff;
+}
+
+.step-explanation {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.app.dark .step-explanation {
+  color: #aaa;
+}
+
+.step-result,
+.step-note {
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.step-result {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.app.dark .step-result {
+  background: #1a2e1a;
+  color: #81c784;
+}
+
+.step-note {
+  background: #fff3e0;
+  color: #e65100;
+  border-left: 4px solid #ff9800;
+}
+
+.app.dark .step-note {
+  background: #2e2416;
+  color: #ffb74d;
+}
+
+/* 解释和相关概念 */
+.solution-explanation {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  border-left: 4px solid #667eea;
+}
+
+.app.dark .solution-explanation {
+  background: #1a1a2e;
+}
+
+.solution-explanation h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.solution-explanation p {
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.app.dark .solution-explanation p {
+  color: #aaa;
+}
+
+.related-concepts {
+  margin-top: 2rem;
+}
+
+.related-concepts h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.app.dark .related-concepts h3 {
+  color: #fff;
+}
+
+.concept-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.concept-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .input-section,
+  .example-problems,
+  .solution-display {
+    padding: 1.5rem;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .solution-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .solution-result {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-value {
+    font-size: 1.2rem;
+  }
+
+  .step-header {
+    flex-wrap: wrap;
+  }
+
+  .step-formula {
+    font-size: 1rem;
+  }
+}
